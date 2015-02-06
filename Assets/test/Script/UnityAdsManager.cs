@@ -22,10 +22,14 @@ public class UnityAdsManager : MonoBehaviour
 	string appId = "14775";
 
 	public void Init () {
-
+		if (Advertisement.isSupported) {
+			Advertisement.Initialize(appId);
+		}
 	}
 
 	public void ShowAds () {
-
+		if (Advertisement.isReady ()) {
+			Advertisement.Show();
+		}
 	}
 }
